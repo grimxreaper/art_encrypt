@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import InputBox from "./Components/InputBox";
-import letters from "./Components/Letters";
 
 const App = () => {
   return (
