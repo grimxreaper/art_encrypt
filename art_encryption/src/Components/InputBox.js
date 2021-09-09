@@ -40,12 +40,10 @@ function InputBox() {
   const compareAnswers = (answer_id) => {
     let input = document.getElementById(answer_id); //element
     let input_index = answer_id.split("-")[1];
-    console.log(input_index);
     let input_value = input.value;
     let rgx = /[a-zA-Z0-9]/;
 
     if (!input_value.match(rgx)) {
-      console.log("Err: no input");
       return false;
     }
 
@@ -89,13 +87,9 @@ function InputBox() {
         blankArray: copyArr,
       });
     }
-
-    console.log(state);
   };
 
   const completed = () => {
-    console.log("hey");
-    console.log(state.blankArray);
     for (let i = 0; i < state.answerArray.length; i++) {
       if (state.blankArray.includes(state.answerArray[i])) {
         console.log("in");

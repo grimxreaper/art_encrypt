@@ -68,4 +68,7 @@ button {
   font-size: 15px;
   margin-top: 10px;
   margin-bottom: 10px;
+  background-color: black;
+  border: 1px solid grey;
+  color: red;
 }
