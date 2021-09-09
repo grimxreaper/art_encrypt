@@ -13,7 +13,7 @@ const letters = [
     },
     {
         "word": "perspective",
-        "letters": ['z','e','r','s','p','e','c','t','i','v','e']
+        "letters": ['p','e','r','s','p','e','c','t','i','v','e']
     }
 ]
 

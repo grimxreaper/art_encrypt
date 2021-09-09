@@ -54,11 +54,13 @@ function InputBox() {
       input_value.toLowerCase() === state.answerArray[input_index].toLowerCase()
     ) {
       input.style.border = "2px solid green";
-      ref.current.innerText = "cool job";
+      input.style.color = "red";
+      input.style.backgroundcolor = "black";
+      ref.current.innerText = "Great job, keep going!";
       return true;
     } else {
-      input.style.border = "2px solid red";
-      ref.current.innerText = "pay the price";
+      input.style.border = "2px solid orange";
+      ref.current.innerText = "Oops, try again!";
       return false;
     }
   };
@@ -74,7 +76,7 @@ function InputBox() {
     // }
     if (e.currentTarget.value === "") {
       //set to a default color
-      e.currentTarget.style.border = "none";
+      e.currentTarget.style.border = "inset 2px #EBE9ED";
       ref.current.innerText = "";
     }
 
@@ -91,6 +93,17 @@ function InputBox() {
     console.log(state);
   };
 
+  const completed = () => {
+    console.log("hey");
+    console.log(state.blankArray);
+    for (let i = 0; i < state.answerArray.length; i++) {
+      if (state.blankArray.includes(state.answerArray[i])) {
+        console.log("in");
+        ref.current.innerText = "You have correctly deciphered the words!";
+      }
+    }
+  };
+
   //success function //check if blankArray includes all letters in answer
 
   return (
@@ -99,32 +112,33 @@ function InputBox() {
       <div className="art_container">
         <img
           src="https://cdna.artstation.com/p/assets/images/images/040/070/750/large/nynblyvynyss-asset.jpg?1627774358"
-          alt=""
+          alt="Nyblyvynyss Art"
         />
-        <div className="letter_graph">
-          <h3>each input box is for each line of the art</h3>
-          <div className="line_one">
-            <h4>Enter the letters for each line</h4>
-            <h4 ref={ref} className="message" if="message">
-              &nbsp;
-            </h4>
-            <div className="word_one">
-              {state.answerArray.map((lett, i) => {
-                if (lett === "|") {
-                  return <br key={i} />;
-                }
-                return (
-                  <input
-                    key={i}
-                    onChange={updateAnswer}
-                    className="input"
-                    id={"letter-" + String(i)}
-                    type="text"
-                    name="word_four"
-                  />
-                );
-              })}
-            </div>
+      </div>
+      <div className="letter_graph">
+        {/* <h3>each input box is for each line of the art</h3> */}
+        <div className="line_one">
+          <h4>Enter the letters for each line...</h4>
+          <h4 ref={ref} className="message" if="message">
+            &nbsp;
+          </h4>
+          <div className="words">
+            {state.answerArray.map((lett, i) => {
+              if (lett === "|") {
+                return <br key={i} />;
+              }
+              return (
+                <input
+                  key={i}
+                  onChange={updateAnswer}
+                  className="input"
+                  id={"letter-" + String(i)}
+                  type="text"
+                  name="word_four"
+                />
+              );
+            })}
+            <button onClick={completed}>Finished</button>
           </div>
         </div>
       </div>
