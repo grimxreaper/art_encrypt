@@ -1,0 +1,76 @@
+@import url("https://fonts.googleapis.com/css2?family=Azeret+Mono:wght@100&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+letter_graph {
+  display: flex;
+  justify-content: center;
+  justify-self: center;
+}
+
+h2 {
+  color: white;
+  display: flex;
+  justify-content: center;
+  justify-self: center;
+  font-family: "Azeret Mono", monospace;
+  font-size: 14px;
+}
+
+h3 {
+  color: white;
+}
+
+h3 {
+  display: flex;
+  justify-content: center;
+  justify-self: center;
+  font-family: "Azeret Mono", monospace;
+  font-size: 12px;
+}
+
+img {
+  width: 40%;
+}
+/* 
+input {
+  display: flex;
+  justify-content: space-around;
+  justify-self: normal;
+  align-items: center;
+  align-self: flex-start;
+  font-family: "Azeret Mono", monospace;
+  font-size: 12px;
+  border: none; /* Get rid of the browser's styling */
+/* border-bottom: 1px solid black; */
+
+input {
+  width: 40px;
+  margin-bottom: 5px;
+}
+
+.line_one {
+  border: none; /* Get rid of the browser's styling */
+  border-bottom: 1px solid black;
+}
+
+body {
+  background-color: black;
+}
+
+h4 {
+  color: white;
+  font-family: "Azeret Mono", monospace;
+  font-size: 10px;
+}
+
+button {
+  margin-top: 10px;
+  margin-bottom: 50px;
+  font-family: "Azeret Mono", monospace;
+  font-size: 13px;
+  background-color: white;
+  border-radius: 10px;
+}
